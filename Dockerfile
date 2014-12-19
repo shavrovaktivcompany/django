@@ -18,11 +18,8 @@ RUN \
   pip3 install python3-ldap && \
   mkdir -p /opt/django && \
   mkdir -p /opt/static && \
-  mkdir -p /opt/media
-#  cd /opt/django &&\
-#  python3 manage.py makemigrations &&\
-#  python3 manage.py  migrate &&\
-#  python3 manage.py runserver 192.168.0.188:8000
+  mkdir -p /opt/media && \
+  chmod +x /docker-entrypoint.sh
 
 # Define mountable directories.
 VOLUME ["/opt/django", "/opt/static", "/opt/media"]
