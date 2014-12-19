@@ -22,7 +22,7 @@ RUN \
   chmod +x /docker-entrypoint.sh
 
 # Define mountable directories.
-VOLUME ["/opt/django", "/opt/static", "/opt/media"]
+
 COPY ./docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
@@ -32,6 +32,6 @@ WORKDIR /opt/django
 
 # Define default command.
 #CMD ["/docker-entrypoint.sh"]
-
+VOLUME ["/opt/django", "/opt/static", "/opt/media"]
 # Expose ports.
 EXPOSE 8000
